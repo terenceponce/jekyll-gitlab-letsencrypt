@@ -74,6 +74,8 @@ module Jekyll
               Jekyll.logger.info "Challenge is valid!"
               return
             end
+            Jekyll.logger.info "Challenge object = #{challenge}"
+            Jekyll.logger.info "Challenge auth object = #{challenge.authorization}"
             Jekyll.logger.info "Challenge status = #{challenge.authorization.verify_status}"
             Jekyll.logger.abort_with "Challenge failed to verify" if tries >= 3
             sleep delay_time
