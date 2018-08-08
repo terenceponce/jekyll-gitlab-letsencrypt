@@ -59,6 +59,7 @@ gitlab-letsencrypt:
 
   # Jekyll settings:
   base_path:  './'               # Where you want the file to go
+  html_url_extension: false      # Add a ".html" after the challenge file URL. Set this to `true` if Gitlab Pages is returning a 404 on your challenge file.
   pretty_url: false              # Add a "/" on the end of the URL... set to `true` if you use permalink_style: pretty
   filename:   'letsencrypt.html' # What to call the generated challenge file
 

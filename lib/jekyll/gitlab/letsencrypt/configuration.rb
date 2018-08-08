@@ -38,6 +38,10 @@ module Jekyll
             jekyll_config['base_path'] || ''
           end
 
+          def html_url_extension?
+            !!jekyll_config['html_url_extension']
+          end
+
           def pretty_url?
             !!jekyll_config['pretty_url']
           end

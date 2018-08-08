@@ -12,7 +12,7 @@ module Jekyll
           self.new(client).process!
         end
 
-        delegate :base_path, :gitlab_url, :gitlab_repo, :pretty_url?, :layout, :domain, :initial_delay, :delay_time, :scheme, to: Configuration
+        delegate :base_path, :gitlab_url, :gitlab_repo, :html_url_extension?, :pretty_url?, :layout, :domain, :initial_delay, :delay_time, :scheme, to: Configuration
 
         def initialize(client)
           @client = client
@@ -123,6 +123,7 @@ module Jekyll
           @challenge_url ||= begin
             url  = "#{scheme}://#{domain}/"
             url += challenge.filename
+            url += ".html" if html_url_extension?
             url += "/" if pretty_url?
             url
           end
